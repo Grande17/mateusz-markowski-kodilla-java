@@ -17,8 +17,21 @@ public class TestingMain {
 
         System.out.println("Test - pierwszy test jednostkowy:");
         Calculator calculator = new Calculator();
-        calculator.add(6,19.5);
-        calculator.sub(27.55,12.30);
+        int add = calculator.add(9,9);
+        int sub = calculator.sub(18,9);
+        if(add == 18){
+            System.out.println("test ok");
+        }
+        else{
+            System.out.println("error");
+        }
+        if(sub == 9){
+            System.out.println("test ok");
+        }
+        else{
+            System.out.println("error");
+        }
+
 
     }
 }
