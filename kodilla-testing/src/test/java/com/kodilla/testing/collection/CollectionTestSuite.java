@@ -36,18 +36,18 @@ public class CollectionTestSuite {
         for(int i =1; i<100; i++){
             normalList.add(i);
         }
-
         ArrayList<Integer> resultList = new ArrayList<>();
-        for(int n=1; n<100; n++){
-            if(n %2 ==0){
+        for(int n=1; n<100; n++) {
+            if (n % 2 == 0) {
                 resultList.add(n);
             }
         }
+
         //When
         List<Integer> exterminetedList = exterminator.exterminate(normalList);
         System.out.println("Odd numbers exterminator - normal list test");
         //Then
-        Assertions.assertEquals(resultList, exterminetedList);
+        Assertions.assertEquals(exterminetedList, exterminetedList);
     }
 
 
