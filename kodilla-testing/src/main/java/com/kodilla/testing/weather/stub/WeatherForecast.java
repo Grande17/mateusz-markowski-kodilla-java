@@ -38,10 +38,15 @@ public class WeatherForecast {
             onlyTemp.add(temp.getValue());
         }
         Collections.sort(onlyTemp);
-        if (onlyTemp.size() % 2 == 0) {
-            mediana = onlyTemp.get(onlyTemp.size() / 2 - 1);
+        if (onlyTemp.size() % 2 == 1) {
+            mediana = onlyTemp.get((onlyTemp.size()+1) / 2 - 1);
         } else {
-            mediana = onlyTemp.get((onlyTemp.size() / 2));
+            double high = onlyTemp.get(onlyTemp.size()/2);
+            double low = onlyTemp.get(onlyTemp.size()/2 - 1);
+            mediana = (high+low) /2.0;
+            return mediana;
+
+
         }
         return mediana;
     }
