@@ -68,6 +68,7 @@ public class WeatherForecastTestSuite {
         //When
         double mediana = weatherForecast.getMediana();
         //Then
+        Assertions.assertEquals(25.5, mediana);
         System.out.println(mediana);
 
     }

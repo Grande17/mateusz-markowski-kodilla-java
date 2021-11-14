@@ -21,8 +21,8 @@ public class WeatherForecast {
     public double getAverageTemperature() {
         double sum = 0;
         for (Map.Entry<String, Double> i : temperatures.getTemparatures().entrySet()) {
-            i.getValue();
-            sum += i.getValue();
+            double value = i.getValue();
+            sum += value;
         }
         double avg = sum / temperatures.getTemparatures().size();
         return avg;
