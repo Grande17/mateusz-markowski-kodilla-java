@@ -1,6 +1,8 @@
 package com.kodilla.rps;
 
 
+import java.sql.SQLOutput;
+
 public class RpsRunner {
     public static void main(String[] args) {
         Player player = new Player();
@@ -25,16 +27,17 @@ public class RpsRunner {
             if (player.getNumberOfWonGamesToEnd() == gameConditions.computerWon) {
                 messagesBoard.defeatMessage();
                 end = true;
+
             } else if (player.getNumberOfWonGamesToEnd() == gameConditions.playerWon) {
                 messagesBoard.victoryMessage();
                 end = true;
             }
-
         }
-        while (end = true) {
+        while (end) {
             messagesBoard.playAgainOrQuitMessage();
             player.setAgain(player.getAgain());
             if (player.getAgain().equalsIgnoreCase("Y")) {
+                System.out.println("Starting again!");
                 main(args);
             } else if (player.getAgain().equalsIgnoreCase("N")) {
                 System.out.println("Quiting");
@@ -43,4 +46,3 @@ public class RpsRunner {
         }
     }
 }
-
