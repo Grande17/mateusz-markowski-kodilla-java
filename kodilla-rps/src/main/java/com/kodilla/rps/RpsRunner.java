@@ -1,6 +1,8 @@
 package com.kodilla.rps;
 
 
+import java.util.Scanner;
+
 public class RpsRunner {
     public static void main(String[] args) {
         Player player = new Player();
@@ -8,39 +10,45 @@ public class RpsRunner {
         Computer computer = new Computer();
         GameConditions gameConditions = new GameConditions();
         boolean end = false;
+        Scanner sc = new Scanner(System.in);
 
 
         messagesBoard.welcomeMessage();//Welcome message
-        player.setPlayerName(player.getPlayerName());//Set player name
-        player.setNumberOfWonGamesToEnd(player.getNumberOfWonGamesToEnd());//Set number of games to win
+        player.setPlayerName();//Set player name
+        player.setNumberOfWonGamesToEnd();//Set number of games to win
         while (!end) {
             messagesBoard.guiMessage();//Message showing possible choices
-            player.setPlayerChoice(player.getPlayerChoice());//player set the choice
+            player.setPlayerChoice();//player set the choice
+            if (player.getPlayerChoice() == 1 || player.getPlayerChoice() == 2 || player.getPlayerChoice() == 3) {
+            } else {
+                System.out.println("You typed wrong numbers, system crashed \n" +
+                        "Type 1, 2 or 3!!!");
+                player.setPlayerChoice();
+            }
             player.playerChoiceConditions(player.getPlayerChoice());// printing out the playr choice
             computer.setRandom(computer.getRandom());//computer genereting int 1-3
             computer.computerChoice();// sout computers choice
             gameConditions.victoryConditions(player.getPlayerChoice(), computer.getRandom());//checking the game conditions
 
-
             if (player.getNumberOfWonGamesToEnd() == gameConditions.computerWon) {
                 messagesBoard.defeatMessage();
                 end = true;
+
             } else if (player.getNumberOfWonGamesToEnd() == gameConditions.playerWon) {
                 messagesBoard.victoryMessage();
                 end = true;
             }
+        }
 
+        messagesBoard.playAgainOrQuitMessage();
+        player.setAgain();
+        if (player.getAgain().equalsIgnoreCase("Y")) {
+            System.out.println("Starting again!");
+            main(args);
+        } else if (player.getAgain().equalsIgnoreCase("N")) {
+            System.out.println("Quiting");
+            System.exit(0);
         }
-        while (end = true) {
-            messagesBoard.playAgainOrQuitMessage();
-            player.setAgain(player.getAgain());
-            if (player.getAgain().equalsIgnoreCase("Y")) {
-                main(args);
-            } else if (player.getAgain().equalsIgnoreCase("N")) {
-                System.out.println("Quiting");
-                System.exit(0);
-            }
-        }
+
     }
 }
-

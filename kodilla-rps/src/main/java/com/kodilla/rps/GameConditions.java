@@ -17,11 +17,11 @@ public class GameConditions {
         return comp;
     }
 
-    public void setPlay(int play) {
+    public void setPlay() {
         this.play = player.getPlayerChoice();
     }
 
-    public void setComp(int comp) {
+    public void setComp() {
         this.comp = computer.getRandom();
     }
 
@@ -29,8 +29,8 @@ public class GameConditions {
         if (play == comp) {
             gameNumber++;
             System.out.println("DRAW \n" +
-                    "You win: "+playerWon+"\n" +
-                    "Total computer wins: "+ computerWon+"\n" +
+                    "You win: "+playerWon+"/"+gameNumber+"\n" +
+                    "Total computer wins: "+ computerWon+"/"+gameNumber+"\n" +
                     "Total number of games: "+gameNumber);
             System.out.println();
         } else if (play == 1 && comp == 2 || // Computer victory
@@ -39,8 +39,8 @@ public class GameConditions {
             computerWon++;
             gameNumber++;
             System.out.println("Computer won. \n" +
-                    "You win: "+ playerWon+"\n"+
-                    "Total computer wins: " + computerWon + "\n" +
+                    "You win: "+ playerWon+"/"+gameNumber+"\n"+
+                    "Total computer wins: " + computerWon +"/"+gameNumber+ "\n" +
                     "Total number of games: " + gameNumber);
             System.out.println();
         } else if (comp == 1 && play == 2 ||
@@ -49,8 +49,8 @@ public class GameConditions {
             playerWon++;
             gameNumber++;
             System.out.println("You won.\n" +
-                    "You win: " + playerWon + "\n" +
-                    "Total computer wins: "+ computerWon+"\n"+
+                    "You win: " + playerWon +"/"+gameNumber+ "\n" +
+                    "Total computer wins: "+ computerWon+"/"+gameNumber+"\n"+
                     "Total number of games: " + gameNumber);
             System.out.println();
         }
