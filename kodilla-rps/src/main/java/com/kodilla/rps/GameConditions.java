@@ -53,6 +53,7 @@ public class GameConditions {
                     "Total computer wins: "+ computerWon+"\n"+
                     "Total number of games: " + gameNumber);
             System.out.println();
+            System.out.println("test");
         }
     }
 

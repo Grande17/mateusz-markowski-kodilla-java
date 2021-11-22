@@ -23,5 +23,8 @@ public class MessagesBoard {
                 "Press Y to play again.\n" +
                 "Press N to quit the game.");
     }
+    void hello(){
+        System.out.println("test");
+    }
 
 }

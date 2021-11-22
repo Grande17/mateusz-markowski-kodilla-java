@@ -55,6 +55,7 @@ public class Player {
             player = "Scissors";
         }
         System.out.println("Your choice was "+ player);
+        System.out.println("test");
     }
 
 }

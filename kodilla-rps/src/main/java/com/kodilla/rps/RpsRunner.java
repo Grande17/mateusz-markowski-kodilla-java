@@ -42,6 +42,7 @@ public class RpsRunner {
         } else if (player.getAgain().equalsIgnoreCase("N")) {
             System.out.println("Quiting");
             System.exit(0);
+            System.out.println("test");
         }
 
     }
