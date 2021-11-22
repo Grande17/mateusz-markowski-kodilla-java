@@ -1,5 +1,8 @@
 package com.kodilla.rps;
 
+
+import java.sql.SQLOutput;
+
 public class RpsRunner {
     public static void main(String[] args) {
         Player player = new Player();
@@ -12,7 +15,7 @@ public class RpsRunner {
         messagesBoard.welcomeMessage();//Welcome message
         player.setPlayerName(player.getPlayerName());//Set player name
         player.setNumberOfWonGamesToEnd(player.getNumberOfWonGamesToEnd());//Set number of games to win
-        while(!end) {
+        while (!end) {
             messagesBoard.guiMessage();//Message showing possible choices
             player.setPlayerChoice(player.getPlayerChoice());//player set the choice
             player.playerChoiceConditions(player.getPlayerChoice());// printing out the playr choice
@@ -20,22 +23,26 @@ public class RpsRunner {
             computer.computerChoice();// sout computers choice
             gameConditions.victoryConditions(player.getPlayerChoice(), computer.getRandom());//checking the game conditions
 
-            if(player.getNumberOfWonGamesToEnd() == gameConditions.playerWon ||
-                    player.getNumberOfWonGamesToEnd() == gameConditions.computerWon){
+
+            if (player.getNumberOfWonGamesToEnd() == gameConditions.computerWon) {
+                messagesBoard.defeatMessage();
+                end = true;
+
+            } else if (player.getNumberOfWonGamesToEnd() == gameConditions.playerWon) {
+                messagesBoard.victoryMessage();
                 end = true;
             }
-            if(gameConditions.playerWon == player.getNumberOfWonGamesToEnd()){
-                System.out.println("Congratulations you won the whole game!");
-            }else if(gameConditions.computerWon == player.getNumberOfWonGamesToEnd()){
-                System.out.println("Unfortunately you lost! Try to play some easier games! ");
-            }
-
         }
 
-
-
-
-
+        messagesBoard.playAgainOrQuitMessage();
+        player.setAgain();
+        if (player.getAgain().equalsIgnoreCase("Y")) {
+            System.out.println("Starting again!");
+            main(args);
+        } else if (player.getAgain().equalsIgnoreCase("N")) {
+            System.out.println("Quiting");
+            System.exit(0);
+        }
 
     }
 }
