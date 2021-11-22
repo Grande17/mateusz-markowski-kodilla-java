@@ -17,11 +17,19 @@ public class GameConditions {
         return comp;
     }
 
+<<<<<<< HEAD
     public void setPlay() {
         this.play = player.getPlayerChoice();
     }
 
     public void setComp() {
+=======
+    public void setPlay(int play) {
+        this.play = player.getPlayerChoice();
+    }
+
+    public void setComp(int comp) {
+>>>>>>> origin/Portfolio
         this.comp = computer.getRandom();
     }
 
@@ -29,8 +37,13 @@ public class GameConditions {
         if (play == comp) {
             gameNumber++;
             System.out.println("DRAW \n" +
+<<<<<<< HEAD
                     "You win: "+playerWon+"/"+gameNumber+"\n" +
                     "Total computer wins: "+ computerWon+"/"+gameNumber+"\n" +
+=======
+                    "You win: "+playerWon+"\n" +
+                    "Total computer wins: "+ computerWon+"\n" +
+>>>>>>> origin/Portfolio
                     "Total number of games: "+gameNumber);
             System.out.println();
         } else if (play == 1 && comp == 2 || // Computer victory
@@ -39,8 +52,13 @@ public class GameConditions {
             computerWon++;
             gameNumber++;
             System.out.println("Computer won. \n" +
+<<<<<<< HEAD
                     "You win: "+ playerWon+"/"+gameNumber+"\n"+
                     "Total computer wins: " + computerWon +"/"+gameNumber+ "\n" +
+=======
+                    "You win: "+ playerWon+"\n"+
+                    "Total computer wins: " + computerWon + "\n" +
+>>>>>>> origin/Portfolio
                     "Total number of games: " + gameNumber);
             System.out.println();
         } else if (comp == 1 && play == 2 ||
@@ -49,12 +67,20 @@ public class GameConditions {
             playerWon++;
             gameNumber++;
             System.out.println("You won.\n" +
+<<<<<<< HEAD
                     "You win: " + playerWon +"/"+gameNumber+ "\n" +
                     "Total computer wins: "+ computerWon+"/"+gameNumber+"\n"+
+=======
+                    "You win: " + playerWon + "\n" +
+                    "Total computer wins: "+ computerWon+"\n"+
+>>>>>>> origin/Portfolio
                     "Total number of games: " + gameNumber);
             System.out.println();
         }
     }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/Portfolio
 }
