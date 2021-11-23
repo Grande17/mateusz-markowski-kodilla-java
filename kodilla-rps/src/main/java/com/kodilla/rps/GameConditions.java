@@ -17,11 +17,11 @@ public class GameConditions {
         return comp;
     }
 
-    public void setPlay(int play) {
+    public void setPlay() {
         this.play = player.getPlayerChoice();
     }
 
-    public void setComp(int comp) {
+    public void setComp() {
         this.comp = computer.getRandom();
     }
 
@@ -53,9 +53,7 @@ public class GameConditions {
                     "Total computer wins: "+ computerWon+"\n"+
                     "Total number of games: " + gameNumber);
             System.out.println();
-            System.out.println("test");
         }
     }
-
 
 }

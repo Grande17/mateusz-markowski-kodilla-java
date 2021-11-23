@@ -1,6 +1,5 @@
 package com.kodilla.rps;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Player {
@@ -15,7 +14,7 @@ public class Player {
         return playerName;
     }
 
-    public void setPlayerName(String playerName) {
+    public void setPlayerName() {
         System.out.println("Please set player name: ");
         this.playerName = sc.nextLine();
     }
@@ -24,7 +23,7 @@ public class Player {
         return numberOfWonGamesToEnd;
     }
 
-    public void setNumberOfWonGamesToEnd(int numberOfWonGamesToEnd) {
+    public void setNumberOfWonGamesToEnd() {
         System.out.println("Set number of games you want to play to win: ");
         this.numberOfWonGamesToEnd = sc.nextInt();
     }
@@ -33,7 +32,7 @@ public class Player {
         return playerChoice;
     }
 
-    public void setPlayerChoice(int playerChoice) {
+    public void setPlayerChoice() {
         this.playerChoice = sc.nextInt();
     }
 
@@ -55,7 +54,7 @@ public class Player {
             player = "Scissors";
         }
         System.out.println("Your choice was "+ player);
-        System.out.println("test");
+
     }
 
 }

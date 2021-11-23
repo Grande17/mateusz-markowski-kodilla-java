@@ -1,6 +1,5 @@
 package com.kodilla.rps;
 
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -15,7 +14,7 @@ public class Computer {
         return random;
     }
 
-    public void setRandom(int random) {
+    public void setRandom() {
         this.random = randomiser.nextInt(3)+1;
     }
 
@@ -29,6 +28,6 @@ public class Computer {
             computer = "Scissors";
         }
         System.out.println("Computer choice was "+computer);
-        System.out.println("test");
+
     }
 }
