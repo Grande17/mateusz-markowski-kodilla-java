@@ -25,6 +25,10 @@ public class Player {
 
     public void setNumberOfWonGamesToEnd() {
         System.out.println("Set number of games you want to play to win: ");
+        while(!sc.hasNextInt()){
+            System.out.println("Input is not a number.");
+            sc.nextLine();
+        }
         this.numberOfWonGamesToEnd = sc.nextInt();
     }
 
@@ -33,7 +37,13 @@ public class Player {
     }
 
     public void setPlayerChoice() {
-        this.playerChoice = sc.nextInt();
+        String valueOfString = sc.next();
+        if (valueOfString.equals("1") || valueOfString.equals("2") || valueOfString.equals("3")) {
+            this.playerChoice = Integer.valueOf(valueOfString);
+        } else {
+            System.out.println("Please, type 1, 2 or 3!!!");
+            setPlayerChoice();
+        }
     }
 
     public String getAgain() {
@@ -41,7 +51,14 @@ public class Player {
     }
 
     public void setAgain() {
-        this.again = sc.next();
+        String value = sc.next();
+        if(value.equalsIgnoreCase("Y") || value.equalsIgnoreCase("N")){
+            this.again = value;
+        }
+        else{
+            System.out.println("Please, type Y or N!");
+            setAgain();
+        }
     }
 
     public void playerChoiceConditions(int playerChoice){
@@ -54,7 +71,5 @@ public class Player {
             player = "Scissors";
         }
         System.out.println("Your choice was "+ player);
-
     }
-
 }
