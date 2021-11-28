@@ -21,9 +21,9 @@ public class RpsRunner {
                 messageBoard.guiMessage();
                 player.setPlayerChoice();
                 computer.setComputerChoice();
-                playerChoice = gameLogic.choice(computer.getComputerChoice());
+                playerChoice = gameLogic.choice(player.getPlayerChoice());
                 messageBoard.playerChoice(playerChoice.getName());
-                computerChoice = gameLogic.choice(player.getPlayerChoice());
+                computerChoice = gameLogic.choice(computer.getComputerChoice());
                 messageBoard.computerChoice(computerChoice.getName());
                 gameLogic.checkWinner(playerChoice, computerChoice);
                 gameLogic.statistics();
@@ -40,8 +40,8 @@ public class RpsRunner {
             messageBoard.playAgainOrQuit();
             player.setPlayAgainOrQuit();
             if (player.getPlayAgainOrQuit().equalsIgnoreCase("Y")) {
-                end = false;
                 System.out.println("Starting again...");
+                end = false;
             }else if(player.getPlayAgainOrQuit().equalsIgnoreCase("N")){
                 System.out.println("Quiting!");
                 System.exit(0);
