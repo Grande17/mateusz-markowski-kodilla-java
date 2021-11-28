@@ -39,5 +39,6 @@ public class RpsRunner {
             System.out.println("Quiting");
             System.exit(0);
         }
+
     }
 }

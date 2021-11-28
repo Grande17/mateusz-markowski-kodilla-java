@@ -5,7 +5,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Computer {
-    private Scanner sc = new Scanner(System.in);
     private String computer;
     private Random randomiser = new Random();
     private int random;

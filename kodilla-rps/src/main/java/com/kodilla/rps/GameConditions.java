@@ -17,13 +17,6 @@ public class GameConditions {
         return comp;
     }
 
-    public void setPlay() {
-        this.play = player.getPlayerChoice();
-    }
-
-    public void setComp() {
-        this.comp = computer.getRandom();
-    }
 
     public void victoryConditions(int play, int comp) {
         if (play == comp) {
