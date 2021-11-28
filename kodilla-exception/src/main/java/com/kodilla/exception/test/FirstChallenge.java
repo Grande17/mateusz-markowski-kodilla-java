@@ -21,10 +21,6 @@ public class FirstChallenge {
         }finally {
             System.out.println("Program goes on.");
         }
-
-
-
-
     }
 
 }
