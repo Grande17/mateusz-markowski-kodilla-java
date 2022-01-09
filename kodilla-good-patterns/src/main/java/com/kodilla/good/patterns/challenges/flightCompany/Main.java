@@ -6,8 +6,8 @@ public class Main {
         SearchProcessor searchProcessor = new SearchProcessor(routesDataBase);
 
        searchProcessor.flightFrom("LAX");
-       searchProcessor.flightFrom("SAT");
-       searchProcessor.connectingFlightTo("LAX", "SAT");
+       searchProcessor.flightTo("SAT");
+       searchProcessor.connectingFlightTo("LAX", "DEL");
 
 
     }
