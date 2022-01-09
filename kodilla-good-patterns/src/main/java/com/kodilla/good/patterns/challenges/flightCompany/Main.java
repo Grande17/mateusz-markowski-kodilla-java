@@ -7,7 +7,7 @@ public class Main {
 
        searchProcessor.flightFrom("LAX");
        searchProcessor.flightTo("SAT");
-       searchProcessor.connectingFlightTo("LAX", "DEL");
+       searchProcessor.connectingFlight("LAX", "DEL");
 
 
     }

@@ -24,11 +24,11 @@ public class SearchProcessor {
                 .map(y-> "Flight to: "+y.getArrival()+" from: "+y.getDeparture())
                 .forEach(System.out::println);
     }
-    public void connectingFlightTo(String departureAirport, String arrivalAirport){
+    public void connectingFlight(String departureAirport, String arrivalAirport) {
         routesDb.getFlights().stream()
-                .filter(route -> (route.getDeparture().equalsIgnoreCase(departureAirport)) && (route.getArrival().equalsIgnoreCase(arrivalAirport)))
-                .map(e-> "Flight from: "+e.getDeparture()+" to: "+e.getArrival())
+                .filter(route -> route.getArrival().equals(arrivalAirport))
+                .map(x-> "Flight from: "+departureAirport+" to: "+arrivalAirport+" through: "+x.getDeparture())
                 .forEach(System.out::println);
-    }
 
+    }
 }
