@@ -1,6 +1,8 @@
 package com.kodilla.good.patterns.challenges.flightCompany;
 
-import java.util.Set;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class SearchProcessor {
@@ -10,25 +12,34 @@ public class SearchProcessor {
         this.routesDb = routesDb;
     }
 
-    public void flightFrom(String departureAirport){
-          routesDb.getFlights().stream()
-                .filter(route -> route.getDeparture().equals(departureAirport))
-                  .map(x-> "Departure from: "+ x.getDeparture() +" to "+x.getArrival())
-                  .forEach(System.out::println);
+    public List<Route> flightFrom(String departureAirport){
+        List<Route> arrivalAirports = new ArrayList<>();
+        arrivalAirports = routesDb.getFlights().stream()
+                 .filter(x-> x.getDeparture().equals(departureAirport))
+                 .collect(Collectors.toList());
+        return arrivalAirports;
 
     }
 
-    public void flightTo(String arrivalAirport){
-        routesDb.getFlights().stream()
-                .filter(route -> route.getArrival().equals(arrivalAirport))
-                .map(y-> "Flight to: "+y.getArrival()+" from: "+y.getDeparture())
-                .forEach(System.out::println);
+    public List<Route> flightTo(String arrivalAirport){
+        List<Route> departureAirports = new ArrayList<>();
+        departureAirports = routesDb.getFlights().stream()
+                .filter(x-> x.getArrival().equals(arrivalAirport))
+                .collect(Collectors.toList());
+        return departureAirports;
+
     }
     public void connectingFlight(String departureAirport, String arrivalAirport) {
         routesDb.getFlights().stream()
-                .filter(route -> route.getArrival().equals(arrivalAirport))
-                .map(x-> "Flight from: "+departureAirport+" to: "+arrivalAirport+" through: "+x.getDeparture())
-                .forEach(System.out::println);
+                .filter(x-> x.getDeparture().equals(departureAirport))
+                .forEach(x->  {
+                    routesDb.getFlights().stream()
+                            .filter(y-> x.getArrival().equals(y.getDeparture()) && y.getArrival().equals(arrivalAirport))
+                            .map(z-> "Flight from: "+departureAirport+" to: "+arrivalAirport+" is possible only through: "+ z.getDeparture())
+                            .forEach(System.out::println);
 
-    }
+                });
+
+        }
+
 }

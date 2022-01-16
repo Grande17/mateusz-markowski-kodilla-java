@@ -34,7 +34,6 @@ public class Route {
         result = 31 * result + arrival.hashCode();
         return result;
     }
-
     @Override
     public String toString() {
         return "Flight from " + departure + " to "+arrival;

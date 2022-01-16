@@ -5,9 +5,9 @@ public class Main {
         RoutesDataBase routesDataBase = new RoutesDataBase();
         SearchProcessor searchProcessor = new SearchProcessor(routesDataBase);
 
-       searchProcessor.flightFrom("LAX");
-       searchProcessor.flightTo("SAT");
-       searchProcessor.connectingFlight("LAX", "DEL");
+        System.out.println(searchProcessor.flightFrom("LAX"));
+        System.out.println(searchProcessor.flightTo("SAT"));
+        searchProcessor.connectingFlight("LAX", "DEL");
 
 
     }

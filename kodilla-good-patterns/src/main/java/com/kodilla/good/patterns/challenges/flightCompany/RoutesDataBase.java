@@ -1,18 +1,20 @@
 package com.kodilla.good.patterns.challenges.flightCompany;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class RoutesDataBase {
-    private Set<Route> flights;
+    private List<Route> flights;
 
 
-    public Set<Route> getFlights() {
+    public List<Route> getFlights() {
         flights = newList();
         return flights;
     }
-    public Set<Route> newList(){
-        Set<Route> list = new HashSet<>();
+    public List<Route> newList(){
+        List<Route> list = new ArrayList<>();
 
         list.add(new Route("LAX", "SAT"));
         list.add(new Route("SAT", "LAX"));
