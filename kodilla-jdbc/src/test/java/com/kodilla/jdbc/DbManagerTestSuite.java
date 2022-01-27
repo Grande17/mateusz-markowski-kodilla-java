@@ -46,11 +46,11 @@ class DbManagerTestSuite {
         //Given
         DbManager dbManager = DbManager.getInstance();
         //When
-        String sqlQuery ="SELECT U.FIRSTNAME, U.LASTNAME, COUNT(*) AS TASKS_NUMBER\n" +
-                "FROM USERS U  JOIN ISSUES I on U.ID = I.USER_ID_ASSIGNEDTO\n" +
-                "GROUP BY I.USER_ID_ASSIGNEDTO\n" +
+        String sqlQuery ="SELECT U.FIRSTNAME, U.LASTNAME, COUNT(*) AS POSTS_NUMBER\n" +
+                "FROM USERS U JOIN POSTS P ON U.ID = P.USER_ID\n" +
+                "GROUP BY P.USER_ID\n" +
                 "HAVING COUNT(*) >= 2\n" +
-                "ORDER BY U.LASTNAME;";
+                "ORDER BY U.LASTNAME, U.FIRSTNAME";
         Statement statement = dbManager.getConnection().createStatement();
         ResultSet rs = statement.executeQuery(sqlQuery);
         //Then
@@ -58,11 +58,11 @@ class DbManagerTestSuite {
         while(rs.next()){
             System.out.println(rs.getString("FIRSTNAME") +", "+
                     rs.getString("LASTNAME")+", "+
-                    rs.getInt("TASKS_NUMBER"));
+                    rs.getInt("POSTS_NUMBER"));
             counter++;
         }
         rs.close();
         statement.close();
-        assertEquals(5,counter);
+        assertEquals(2,counter);
     }
 }
