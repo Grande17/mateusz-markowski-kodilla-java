@@ -60,4 +60,24 @@ public final class Pizza {
                 ", ingredients=" + ingredients +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Pizza pizza = (Pizza) o;
+
+        if (bottom != null ? !bottom.equals(pizza.bottom) : pizza.bottom != null) return false;
+        if (sauce != null ? !sauce.equals(pizza.sauce) : pizza.sauce != null) return false;
+        return ingredients != null ? ingredients.equals(pizza.ingredients) : pizza.ingredients == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = bottom != null ? bottom.hashCode() : 0;
+        result = 31 * result + (sauce != null ? sauce.hashCode() : 0);
+        result = 31 * result + (ingredients != null ? ingredients.hashCode() : 0);
+        return result;
+    }
 }
