@@ -1,15 +1,7 @@
 package com.kodilla.jdbc;
 
-import org.junit.jupiter.api.Test;
-
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 class DbManagerTestSuite {
+    /*
 
     @Test
     void testConnect() throws SQLException {
@@ -65,4 +57,6 @@ class DbManagerTestSuite {
         statement.close();
         assertEquals(2,counter);
     }
+
+     */
 }
